@@ -1,14 +1,19 @@
 package ru.stepanovgzh.axon.projection;
 
-import com.sun.java.accessibility.util.AccessibilityEventMonitor;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.stereotype.Service;
 import ru.stepanovgzh.axon.data.model.Bike;
 import ru.stepanovgzh.axon.data.model.EntityMapper;
 import ru.stepanovgzh.axon.data.repository.BikeRepository;
-import ru.stepanovgzh.axon.sqrs.bike.event.*;
+import ru.stepanovgzh.axon.data.view.BikeView;
+import ru.stepanovgzh.axon.cqrs.bike.event.*;
+import ru.stepanovgzh.axon.cqrs.bike.query.AllBikesQuery;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -57,5 +62,13 @@ public class BikeProjection
     public void on(BikeDeletedEvent event)
     {
         repository.deleteById(event.getId());
+    }
+
+    @QueryHandler
+    public List<BikeView> handle(AllBikesQuery query)
+    {
+        return repository.findAll().stream()
+                .map(mapper::map)
+                .collect(Collectors.toList());
     }
 }

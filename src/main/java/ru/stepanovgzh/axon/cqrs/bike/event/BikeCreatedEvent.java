@@ -1,4 +1,4 @@
-package ru.stepanovgzh.axon.sqrs.bike.event;
+package ru.stepanovgzh.axon.cqrs.bike.event;
 
 import lombok.Value;
 

@@ -5,12 +5,12 @@ import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
-import ru.stepanovgzh.axon.sqrs.renter.command.CreateRenterCommand;
-import ru.stepanovgzh.axon.sqrs.renter.command.DeleteRenterCommand;
-import ru.stepanovgzh.axon.sqrs.renter.command.UpdateRenterCommand;
-import ru.stepanovgzh.axon.sqrs.renter.event.RenterCreatedEvent;
-import ru.stepanovgzh.axon.sqrs.renter.event.RenterDeletedEvent;
-import ru.stepanovgzh.axon.sqrs.renter.event.RenterUpdatedEvent;
+import ru.stepanovgzh.axon.cqrs.renter.command.CreateRenterCommand;
+import ru.stepanovgzh.axon.cqrs.renter.command.DeleteRenterCommand;
+import ru.stepanovgzh.axon.cqrs.renter.command.UpdateRenterCommand;
+import ru.stepanovgzh.axon.cqrs.renter.event.RenterCreatedEvent;
+import ru.stepanovgzh.axon.cqrs.renter.event.RenterDeletedEvent;
+import ru.stepanovgzh.axon.cqrs.renter.event.RenterUpdatedEvent;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package ru.stepanovgzh.axon.sqrs.renter.command;
+package ru.stepanovgzh.axon.cqrs.bike.command;
 
 import lombok.Value;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
@@ -6,11 +6,9 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 import java.util.UUID;
 
 @Value
-public class CreateRenterCommand
+public class ReturnBikeCommand
 {
     @TargetAggregateIdentifier
     UUID id;
-    String name;
-    String lastName;
-    int age;
+    double mileage;
 }

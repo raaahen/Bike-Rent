@@ -5,8 +5,8 @@ import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
-import ru.stepanovgzh.axon.sqrs.bike.command.*;
-import ru.stepanovgzh.axon.sqrs.bike.event.*;
+import ru.stepanovgzh.axon.cqrs.bike.command.*;
+import ru.stepanovgzh.axon.cqrs.bike.event.*;
 
 import java.time.Instant;
 import java.util.UUID;

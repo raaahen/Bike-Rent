@@ -1,4 +1,4 @@
-package ru.stepanovgzh.axon.sqrs.bike.command;
+package ru.stepanovgzh.axon.cqrs.bike.command;
 
 import lombok.Value;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;

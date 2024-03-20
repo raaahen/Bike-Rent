@@ -1,7 +1,6 @@
-package ru.stepanovgzh.axon.sqrs.bike.event;
+package ru.stepanovgzh.axon.cqrs.bike.event;
 
 import lombok.Value;
-import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 import java.util.UUID;
 

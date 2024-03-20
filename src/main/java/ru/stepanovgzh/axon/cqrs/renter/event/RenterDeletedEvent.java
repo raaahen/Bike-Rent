@@ -1,4 +1,4 @@
-package ru.stepanovgzh.axon.sqrs.renter.event;
+package ru.stepanovgzh.axon.cqrs.renter.event;
 
 import lombok.Value;
 
