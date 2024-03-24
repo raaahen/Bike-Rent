@@ -58,7 +58,8 @@ public class BikeController
         return commandGateway.send(new UpdateBikeCommand(
                 input.getBikeId(),
                 input.getName(),
-                input.getDescription()
+                input.getDescription(),
+                input.getColour()
         ));
     }
 

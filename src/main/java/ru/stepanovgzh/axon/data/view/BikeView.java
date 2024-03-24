@@ -2,6 +2,7 @@ package ru.stepanovgzh.axon.data.view;
 
 
 import lombok.Value;
+import ru.stepanovgzh.axon.data.model.types.BikeColour;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -16,4 +17,5 @@ public class BikeView
     Instant createdAt;
     boolean rented;
     double mileage;
+    BikeColour colour;
 }

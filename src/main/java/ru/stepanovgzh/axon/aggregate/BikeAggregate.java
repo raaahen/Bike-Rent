@@ -3,13 +3,16 @@ package ru.stepanovgzh.axon.aggregate;
 import lombok.NoArgsConstructor;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
+import org.axonframework.messaging.MetaData;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 import ru.stepanovgzh.axon.cqrs.bike.command.*;
 import ru.stepanovgzh.axon.cqrs.bike.event.*;
+import ru.stepanovgzh.axon.data.model.types.BikeColour;
 
 import java.time.Instant;
+import java.util.Map;
 import java.util.UUID;
 
 @Aggregate
@@ -24,6 +27,7 @@ public class BikeAggregate
     private Instant createdAt;
     private boolean rented;
     private double mileage;
+    private BikeColour colour;
 
     @CommandHandler
     public BikeAggregate(CreateBikeCommand command)
@@ -83,8 +87,8 @@ public class BikeAggregate
         AggregateLifecycle.apply(new BikeUpdatedEvent(
                 command.getId(),
                 command.getName(),
-                command.getDescription()
-
+                command.getDescription(),
+                command.getColour()
         ));
     }
 
@@ -93,6 +97,7 @@ public class BikeAggregate
     {
         this.name = event.getName();
         this.description = event.getDescription();
+        this.colour = event.getBikeColour();
     }
 
     @CommandHandler
