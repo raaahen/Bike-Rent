@@ -12,7 +12,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class CustomCorrelationDataProvider implements CorrelationDataProvider
 {
-    private final String ACCOUNT_ID = "accountId";
+    private static final String ACCOUNT_ID = "accountId";
     private final RequestContextFillingFilter.RequestContext requestContext;
 
     @Override

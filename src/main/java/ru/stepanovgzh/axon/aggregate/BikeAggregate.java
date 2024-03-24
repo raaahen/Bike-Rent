@@ -10,6 +10,7 @@ import org.axonframework.spring.stereotype.Aggregate;
 import ru.stepanovgzh.axon.cqrs.bike.command.*;
 import ru.stepanovgzh.axon.cqrs.bike.event.*;
 import ru.stepanovgzh.axon.data.model.types.BikeColour;
+import ru.stepanovgzh.axon.data.repository.BikeRepository;
 
 import java.time.Instant;
 import java.util.Map;
@@ -82,7 +83,7 @@ public class BikeAggregate
     }
 
     @CommandHandler
-    public void handle(UpdateBikeCommand command)
+    public void handle(UpdateBikeCommand command, BikeRepository bikeRepository)
     {
         AggregateLifecycle.apply(new BikeUpdatedEvent(
                 command.getId(),
