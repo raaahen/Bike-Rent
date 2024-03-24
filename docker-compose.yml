@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  axon:
+    image: axoniq/axonserver
+    hostname: axon
+    ports:
+      - "8024:8024"
+      - "8124:8124"
+      - "8224:8224"
+
+  postgres:
+    container_name: postgres
+    image: postgres:12
+    restart: unless-stopped
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password

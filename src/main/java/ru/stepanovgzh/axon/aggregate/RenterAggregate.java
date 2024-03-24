@@ -3,6 +3,7 @@ package ru.stepanovgzh.axon.aggregate;
 import lombok.NoArgsConstructor;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
+import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 import ru.stepanovgzh.axon.cqrs.renter.command.CreateRenterCommand;
@@ -18,6 +19,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class RenterAggregate
 {
+    @AggregateIdentifier
     private UUID id;
     private String name;
     private String lastName;

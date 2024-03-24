@@ -1,6 +1,6 @@
 package ru.stepanovgzh.axon.projection;
 
-import jakarta.persistence.EntityNotFoundException;
+import javax.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
@@ -45,6 +45,7 @@ public class BikeProjection
                 .orElseThrow(() -> new EntityNotFoundException("Bike with id %s not found" + event.getId()));
         bike.setRented(false);
         bike.setRenterId(null);
+        bike.setMileage(bike.getMileage() + event.getMileage());
         repository.save(bike);
     }
 

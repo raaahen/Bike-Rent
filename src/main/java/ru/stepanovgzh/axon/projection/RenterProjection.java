@@ -1,6 +1,6 @@
 package ru.stepanovgzh.axon.projection;
 
-import jakarta.persistence.EntityNotFoundException;
+import javax.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
@@ -15,7 +15,6 @@ import ru.stepanovgzh.axon.cqrs.renter.event.RenterUpdatedEvent;
 import ru.stepanovgzh.axon.data.view.RenterView;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 @Service

@@ -9,7 +9,7 @@ import ru.stepanovgzh.axon.cqrs.renter.event.RenterCreatedEvent;
 import ru.stepanovgzh.axon.cqrs.renter.event.RenterUpdatedEvent;
 import ru.stepanovgzh.axon.data.view.RenterView;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface EntityMapper
 {
     Bike map(BikeCreatedEvent event);
